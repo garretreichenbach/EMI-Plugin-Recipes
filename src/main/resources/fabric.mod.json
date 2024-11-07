@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "emipluginrecipes",
+	"version": "${version}",
+	"name": "EMI Plugin Recipes",
+	"description": "",
+	"authors": [],
+	"contact": {},
+	"license": "All-Rights-Reserved",
+	"icon": "assets/emipluginrecipes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"thederpgamer.emipluginrecipes.client.EmiPluginRecipesClient"
+		],
+		"main": [
+			"thederpgamer.emipluginrecipes.EmiPluginRecipes"
+		],
+		"emi": [
+			"thederpgamer.emipluginrecipes.client.EMIPluginRecipesPlugin"
+		]
+	},
+	"mixins": [
+		"emipluginrecipes.mixins.json",
+		{
+			"config": "emipluginrecipes.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"fabric": "*",
+		"minecraft": "${minecraft_version}"
+	}
+}
