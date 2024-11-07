@@ -8,8 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.text.Text;
-import thederpgamer.emipluginrecipes.client.brewery.AlcoholData;
-import thederpgamer.emipluginrecipes.client.brewery.BreweryPluginManager;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,10 +17,10 @@ import java.util.Optional;
  *
  * @author TheDerpGamer
  */
-public class Beer extends AlcoholData {
+public class Beer extends AlcoholRecipe {
 	
 	public Beer() {
-		super(BreweryPluginManager.anyBarrelCategory, "beer", 6, 1, BarrelType.ANY, 8, 3, 0);
+		super("beer", 6, 1, BarrelType.ANY, 8, 3, 0);
 	}
 
 	@Override

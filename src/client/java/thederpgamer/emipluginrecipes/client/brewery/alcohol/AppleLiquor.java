@@ -17,25 +17,25 @@ import java.util.Optional;
  *
  * @author TheDerpGamer
  */
-public class DarkBeer extends AlcoholRecipe {
-	
-	public DarkBeer() {
-		super("dark_beer", 7, 2, BarrelType.DARK_OAK, 8, 8, 0);
+public class AppleLiquor extends AlcoholRecipe {
+
+	public AppleLiquor() {
+		super("apple_liquor", 14, 5, BarrelType.ACACIA, 16, 6, 3);
 	}
 
 	@Override
 	public List<EmiIngredient> getInputs() {
-		ItemStack wheat = Items.WHEAT.getDefaultStack();
-		wheat.setCount(6);
-		return List.of(EmiStack.of(wheat));
+		ItemStack apples = new ItemStack(Items.APPLE);
+		apples.setCount(12);
+		return List.of(EmiStack.of(apples));
 	}
 
 	@Override
 	public List<EmiStack> getOutputs() {
 		ItemStack output = Items.POTION.getDefaultStack();
 		output.setCount(1);
-		output.set(DataComponentTypes.CUSTOM_NAME, Text.of("Dark Beer"));
-		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(0x650013), List.of()));
+		output.set(DataComponentTypes.CUSTOM_NAME, Text.of("Apple Liquor"));
+		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(0xffdf5050), List.of()));
 		return List.of(EmiStack.of(output));
 	}
 }

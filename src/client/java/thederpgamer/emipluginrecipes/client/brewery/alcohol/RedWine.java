@@ -9,8 +9,6 @@ import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
-import thederpgamer.emipluginrecipes.client.brewery.AlcoholData;
-import thederpgamer.emipluginrecipes.client.brewery.BreweryPluginManager;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,10 +18,10 @@ import java.util.Optional;
  *
  * @author TheDerpGamer
  */
-public class RedWine extends AlcoholData {
+public class RedWine extends AlcoholRecipe {
 
 	public RedWine() {
-		super(BreweryPluginManager.anyBarrelCategory, "red_wine", 8, 4, BarrelType.ANY, 5, 20, 0);
+		super("red_wine", 8, 4, BarrelType.ANY, 5, 20, 0);
 	}
 
 	@Override

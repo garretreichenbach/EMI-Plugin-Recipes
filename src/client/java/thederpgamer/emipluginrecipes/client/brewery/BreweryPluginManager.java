@@ -10,6 +10,7 @@ import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import thederpgamer.emipluginrecipes.client.brewery.alcohol.*;
+import thederpgamer.emipluginrecipes.client.brewery.cauldron.FermentedWheat;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,6 +22,9 @@ import java.util.Set;
  */
 public class BreweryPluginManager {
 
+	public static ItemStack cauldron;
+	public static EmiRecipeCategory cauldronCategory;
+	
 	public static ItemStack anyBarrel;
 	public static EmiRecipeCategory anyBarrelCategory;
 
@@ -56,6 +60,9 @@ public class BreweryPluginManager {
 
 	protected final Set<EmiRecipe> recipes = new HashSet<>() {
 		{
+			//Cauldron
+			add(new FermentedWheat());
+			//Barrels
 			add(new WheatBeer());
 			add(new Beer());
 			add(new DarkBeer());
@@ -63,10 +70,21 @@ public class BreweryPluginManager {
 			add(new Mead());
 			add(new AppleMead());
 			add(new AppleCider());
+			add(new AppleLiquor());
+			add(new Whiskey());
+			add(new Rum());
+			add(new Vodka());
+			add(new MushroomVodka());
+			add(new Gin());
 		}
 	};
 
 	public BreweryPluginManager(EmiRegistry registry) {
+		cauldron = Items.CAULDRON.getDefaultStack();
+		cauldronCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/cauldron"), EmiStack.of(cauldron));
+		registry.addCategory(cauldronCategory);
+		registry.addWorkstation(cauldronCategory, EmiStack.of(cauldron));
+		
 		anyBarrel = Items.BARREL.getDefaultStack();
 		anyBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Any Barrel"));
 		anyBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/any_barrel"), EmiStack.of(anyBarrel));
