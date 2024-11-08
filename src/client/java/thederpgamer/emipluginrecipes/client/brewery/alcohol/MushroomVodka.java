@@ -40,13 +40,13 @@ public class MushroomVodka extends AlcoholRecipe {
 	public List<EmiStack> getOutputs() {
 		ItemStack output = Items.POTION.getDefaultStack();
 		output.setCount(1);
-		output.set(DataComponentTypes.CUSTOM_NAME, Text.of("Mushroom Vodka"));
+		output.set(DataComponentTypes.ITEM_NAME, Text.of("Mushroom Vodka"));
 		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(0xff9999), List.of(
-				new StatusEffectInstance(StatusEffects.WEAKNESS, 80, 1),
-				new StatusEffectInstance(StatusEffects.NAUSEA, 27, 1),
-				new StatusEffectInstance(StatusEffects.NIGHT_VISION, 80, 1),
-				new StatusEffectInstance(StatusEffects.BLINDNESS, 2, 1),
-				new StatusEffectInstance(StatusEffects.SLOWNESS, 3, 1)
+				new StatusEffectInstance(StatusEffects.WEAKNESS, 80, 0),
+				new StatusEffectInstance(StatusEffects.NAUSEA, 27, 0),
+				new StatusEffectInstance(StatusEffects.NIGHT_VISION, 80, 0),
+				new StatusEffectInstance(StatusEffects.BLINDNESS, 2, 0),
+				new StatusEffectInstance(StatusEffects.SLOWNESS, 3, 0)
 		)));
 		return List.of(EmiStack.of(output));
 	}

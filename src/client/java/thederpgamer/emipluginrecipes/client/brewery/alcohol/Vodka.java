@@ -37,8 +37,8 @@ public class Vodka extends AlcoholRecipe {
 	public List<EmiStack> getOutputs() {
 		ItemStack output = Items.POTION.getDefaultStack();
 		output.setCount(1);
-		output.set(DataComponentTypes.CUSTOM_NAME, Text.of("Vodka"));
-		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(Formatting.WHITE.getColorIndex()), List.of(new StatusEffectInstance(StatusEffects.WEAKNESS, 15, 1), new StatusEffectInstance(StatusEffects.POISON, 10, 1))));
+		output.set(DataComponentTypes.ITEM_NAME, Text.of("Vodka"));
+		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(Formatting.WHITE.getColorIndex()), List.of(new StatusEffectInstance(StatusEffects.WEAKNESS, 15, 0), new StatusEffectInstance(StatusEffects.POISON, 10, 0))));
 		return List.of(EmiStack.of(output));
 	}
 }

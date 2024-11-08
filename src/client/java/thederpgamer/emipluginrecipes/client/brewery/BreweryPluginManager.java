@@ -58,26 +58,7 @@ public class BreweryPluginManager {
 	public static ItemStack cherryBarrel;
 	public static EmiRecipeCategory cherryBarrelCategory;
 
-	protected final Set<EmiRecipe> recipes = new HashSet<>() {
-		{
-			//Cauldron
-			add(new FermentedWheat());
-			//Barrels
-			add(new WheatBeer());
-			add(new Beer());
-			add(new DarkBeer());
-			add(new RedWine());
-			add(new Mead());
-			add(new AppleMead());
-			add(new AppleCider());
-			add(new AppleLiquor());
-			add(new Whiskey());
-			add(new Rum());
-			add(new Vodka());
-			add(new MushroomVodka());
-			add(new Gin());
-		}
-	};
+	protected final Set<EmiRecipe> recipes = new HashSet<>();
 
 	public BreweryPluginManager(EmiRegistry registry) {
 		cauldron = Items.CAULDRON.getDefaultStack();
@@ -86,74 +67,96 @@ public class BreweryPluginManager {
 		registry.addWorkstation(cauldronCategory, EmiStack.of(cauldron));
 		
 		anyBarrel = Items.BARREL.getDefaultStack();
-		anyBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Any Barrel"));
+		anyBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Any Barrel"));
 		anyBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/any_barrel"), EmiStack.of(anyBarrel));
 		registry.addCategory(anyBarrelCategory);
 		registry.addWorkstation(anyBarrelCategory, EmiStack.of(anyBarrel));
 
 		oakBarrel = Items.BARREL.getDefaultStack();
-		oakBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Oak Barrel"));
+		oakBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Oak Barrel"));
 		oakBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/oak_barrel"), EmiStack.of(oakBarrel));
 		registry.addCategory(oakBarrelCategory);
 		registry.addWorkstation(oakBarrelCategory, EmiStack.of(oakBarrel));
 
 		spruceBarrel = Items.BARREL.getDefaultStack();
-		spruceBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Spruce Barrel"));
+		spruceBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Spruce Barrel"));
 		spruceBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/spruce_barrel"), EmiStack.of(spruceBarrel));
 		registry.addCategory(spruceBarrelCategory);
 		registry.addWorkstation(spruceBarrelCategory, EmiStack.of(spruceBarrel));
 
 		birchBarrel = Items.BARREL.getDefaultStack();
-		birchBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Birch Barrel"));
+		birchBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Birch Barrel"));
 		birchBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/birch_barrel"), EmiStack.of(birchBarrel));
 		registry.addCategory(birchBarrelCategory);
 		registry.addWorkstation(birchBarrelCategory, EmiStack.of(birchBarrel));
 
 		jungleBarrel = Items.BARREL.getDefaultStack();
-		jungleBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Jungle Barrel"));
+		jungleBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Jungle Barrel"));
 		jungleBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/jungle_barrel"), EmiStack.of(jungleBarrel));
 		registry.addCategory(jungleBarrelCategory);
 		registry.addWorkstation(jungleBarrelCategory, EmiStack.of(jungleBarrel));
 
 		acaciaBarrel = Items.BARREL.getDefaultStack();
-		acaciaBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Acacia Barrel"));
+		acaciaBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Acacia Barrel"));
 		acaciaBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/acacia_barrel"), EmiStack.of(acaciaBarrel));
 		registry.addCategory(acaciaBarrelCategory);
 		registry.addWorkstation(acaciaBarrelCategory, EmiStack.of(acaciaBarrel));
 
 		darkOakBarrel = Items.BARREL.getDefaultStack();
-		darkOakBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Dark Oak Barrel"));
+		darkOakBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Dark Oak Barrel"));
 		darkOakBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/dark_oak_barrel"), EmiStack.of(darkOakBarrel));
 		registry.addCategory(darkOakBarrelCategory);
 		registry.addWorkstation(darkOakBarrelCategory, EmiStack.of(darkOakBarrel));
 
 		crimsonBarrel = Items.BARREL.getDefaultStack();
-		crimsonBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Crimson Barrel"));
+		crimsonBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Crimson Barrel"));
 		crimsonBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/crimson_barrel"), EmiStack.of(crimsonBarrel));
 		registry.addCategory(crimsonBarrelCategory);
 		registry.addWorkstation(crimsonBarrelCategory, EmiStack.of(crimsonBarrel));
 
 		warpedBarrel = Items.BARREL.getDefaultStack();
-		warpedBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Warped Barrel"));
+		warpedBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Warped Barrel"));
 		warpedBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/warped_barrel"), EmiStack.of(warpedBarrel));
 		registry.addCategory(warpedBarrelCategory);
 		registry.addWorkstation(warpedBarrelCategory, EmiStack.of(warpedBarrel));
 
 		mangroveBarrel = Items.BARREL.getDefaultStack();
-		mangroveBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Mangrove Barrel"));
+		mangroveBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Mangrove Barrel"));
 		mangroveBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/mangrove_barrel"), EmiStack.of(mangroveBarrel));
 		registry.addCategory(mangroveBarrelCategory);
 		registry.addWorkstation(mangroveBarrelCategory, EmiStack.of(mangroveBarrel));
 
 		cherryBarrel = Items.BARREL.getDefaultStack();
-		cherryBarrel.set(DataComponentTypes.CUSTOM_NAME, Text.of("Cherry Barrel"));
+		cherryBarrel.set(DataComponentTypes.ITEM_NAME, Text.of("Cherry Barrel"));
 		cherryBarrelCategory = new EmiRecipeCategory(new Identifier("emipluginrecipes", "/cherry_barrel"), EmiStack.of(cherryBarrel));
 		registry.addCategory(cherryBarrelCategory);
 		registry.addWorkstation(cherryBarrelCategory, EmiStack.of(cherryBarrel));
-
+		
+		//Cauldron Recipes
+		recipes.add(new FermentedWheat());
+		//Alcohol Recipes
+		recipes.add(new WheatBeer());
+		recipes.add(new Beer());
+		recipes.add(new DarkBeer());
+		recipes.add(new RedWine());
+		recipes.add(new Mead());
+		recipes.add(new AppleMead());
+		recipes.add(new AppleCider());
+		recipes.add(new AppleLiquor());
+		recipes.add(new Whiskey());
+		recipes.add(new Rum());
+		recipes.add(new Vodka());
+		recipes.add(new MushroomVodka());
+		recipes.add(new Gin());
+		recipes.add(new Tequila());
+		recipes.add(new Absinthe());
+		recipes.add(new GreenAbsinthe());
+		recipes.add(new PotatoSoup());
+		recipes.add(new Coffee());
+		recipes.add(new Eggnog());
+		
 		for(EmiRecipe entry : recipes) {
-			registry.addEmiStackAfter(entry.getOutputs().getFirst(), emiStack -> emiStack.getItemStack().getItem().equals(Items.POTION));
-			registry.removeRecipes(emiRecipe -> emiRecipe.getOutputs().getFirst().equals(entry.getOutputs().getFirst()) && !emiRecipe.getCategory().getId().getNamespace().equals("emipluginrecipes"));
+			registry.addEmiStack(entry.getOutputs().getFirst());
 			registry.addRecipe(entry);
 		}
 	}

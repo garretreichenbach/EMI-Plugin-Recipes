@@ -34,7 +34,7 @@ public class Beer extends AlcoholRecipe {
 	public List<EmiStack> getOutputs() {
 		ItemStack output = Items.POTION.getDefaultStack();
 		output.setCount(1);
-		output.set(DataComponentTypes.CUSTOM_NAME, Text.of("Beer"));
+		output.set(DataComponentTypes.ITEM_NAME, Text.of("Beer"));
 		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(0xffd333), List.of()));
 		return List.of(EmiStack.of(output));
 	}

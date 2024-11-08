@@ -20,25 +20,27 @@ import java.util.Optional;
  *
  * @author TheDerpGamer
  */
-public class Rum extends AlcoholRecipe {
+public class PotatoSoup extends AlcoholRecipe {
 
-	public Rum() {
-		super("rum", 30, 6, BarrelType.OAK, 6, 14, 2, 30);
+	public PotatoSoup() {
+		super("potato_soup", 0, 1, BarrelType.ANY, 3, 0, 0, 0);
 	}
 
 	@Override
 	public List<EmiIngredient> getInputs() {
-		ItemStack sugarcane = new ItemStack(Items.SUGAR_CANE);
-		sugarcane.setCount(18);
-		return List.of(EmiStack.of(sugarcane));
+		ItemStack potatoes = new ItemStack(Items.POTATO);
+		potatoes.setCount(5);
+		ItemStack grass = new ItemStack(Items.SHORT_GRASS);
+		grass.setCount(3);
+		return List.of(EmiStack.of(potatoes), EmiStack.of(grass));
 	}
 
 	@Override
 	public List<EmiStack> getOutputs() {
 		ItemStack output = Items.POTION.getDefaultStack();
 		output.setCount(1);
-		output.set(DataComponentTypes.ITEM_NAME, Text.of("Rum"));
-		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(Formatting.DARK_RED.getColorIndex()), List.of(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 100, 0))));
+		output.set(DataComponentTypes.ITEM_NAME, Text.of("Potato Soup"));
+		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(Formatting.GOLD.getColorIndex()), List.of(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1, 0))));
 		return List.of(EmiStack.of(output));
 	}
 }

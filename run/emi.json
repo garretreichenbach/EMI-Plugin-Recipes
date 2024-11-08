@@ -1,6 +1,19 @@
 {
   "favorites": [],
   "lookup_history": [
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Apple Mead\"\u0027,\"minecraft:potion_contents\":{custom_color:16758861,custom_effects:[{duration:150,id:\"minecraft:water_breathing\",show_icon:1b}],potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Gin\"\u0027,\"minecraft:potion_contents\":{custom_color:10083839,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Rum\"\u0027,\"minecraft:potion_contents\":{custom_color:4,custom_effects:[{duration:100,id:\"minecraft:fire_resistance\",show_icon:1b}],potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Wheat Beer\"\u0027,\"minecraft:potion_contents\":{custom_color:16758861,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Dark Beer\"\u0027,\"minecraft:potion_contents\":{custom_color:6619155,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Red Wine\"\u0027,\"minecraft:potion_contents\":{custom_color:-65536,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Beer\"\u0027,\"minecraft:potion_contents\":{custom_color:16765747,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Fermented Wheat Brew\"\u0027,\"minecraft:potion_contents\":{custom_color:1481884,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Vodka\"\u0027,\"minecraft:potion_contents\":{custom_color:15,custom_effects:[{duration:15,id:\"minecraft:weakness\",show_icon:1b},{duration:10,id:\"minecraft:poison\",show_icon:1b}],potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Mushroom Vodka\"\u0027,\"minecraft:potion_contents\":{custom_color:16751001,custom_effects:[{duration:80,id:\"minecraft:weakness\",show_icon:1b},{duration:27,id:\"minecraft:nausea\",show_icon:1b},{duration:80,id:\"minecraft:night_vision\",show_icon:1b},{duration:2,id:\"minecraft:blindness\",show_icon:1b},{duration:3,id:\"minecraft:slowness\",show_icon:1b}],potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Apple Cider\"\u0027,\"minecraft:potion_contents\":{custom_color:16279584,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Apple Liquor\"\u0027,\"minecraft:potion_contents\":{custom_color:-2142128,potion:\"minecraft:water\"}}",
+    "item:minecraft:potion{\"minecraft:item_name\":\u0027\"Mushroom Vodka\"\u0027,\"minecraft:potion_contents\":{custom_color:16751001,custom_effects:[{amplifier:1b,duration:80,id:\"minecraft:weakness\",show_icon:1b},{amplifier:1b,duration:27,id:\"minecraft:nausea\",show_icon:1b},{amplifier:1b,duration:80,id:\"minecraft:night_vision\",show_icon:1b},{amplifier:1b,duration:2,id:\"minecraft:blindness\",show_icon:1b},{amplifier:1b,duration:3,id:\"minecraft:slowness\",show_icon:1b}],potion:\"minecraft:water\"}}",
     {
       "type": "item",
       "id": "minecraft:potion",

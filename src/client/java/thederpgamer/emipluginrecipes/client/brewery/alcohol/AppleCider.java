@@ -34,7 +34,7 @@ public class AppleCider extends AlcoholRecipe {
 	public List<EmiStack> getOutputs() {
 		ItemStack output = Items.POTION.getDefaultStack();
 		output.setCount(1);
-		output.set(DataComponentTypes.CUSTOM_NAME, Text.of("Apple Cider"));
+		output.set(DataComponentTypes.ITEM_NAME, Text.of("Apple Cider"));
 		output.set(DataComponentTypes.POTION_CONTENTS, new PotionContentsComponent(Optional.ofNullable(Potions.WATER), Optional.of(0xf86820), List.of()));
 		return List.of(EmiStack.of(output));
 	}

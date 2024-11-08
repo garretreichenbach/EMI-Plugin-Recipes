@@ -39,7 +39,7 @@ public abstract class AlcoholRecipe implements EmiRecipe {
 		public String getName() {
 			return name;
 		}
-		
+
 		public EmiRecipeCategory getCategory() {
 			return category;
 		}
@@ -83,31 +83,24 @@ public abstract class AlcoholRecipe implements EmiRecipe {
 
 	@Override
 	public int getDisplayWidth() {
-		return 80;
+		return 100 + (getInputs().size() * 20) + (getOutputs().size() * 20);
 	}
 
 	@Override
 	public int getDisplayHeight() {
-		return 40;
+		return 100;
 	}
 
 	public void addWidgets(WidgetHolder widgetHolder) {
 		widgetHolder.addText(Text.of("Alcohol Level: " + alcoholLevel), 0, 0, 0, false);
-		widgetHolder.addText(Text.of("Difficulty: " + difficulty), 0, 5, 0, false);
-		widgetHolder.addText(Text.of("Produced In: " + barrelType.getName()), 0, 10, 0, false);
-		widgetHolder.addText(Text.of("Brewing Time: " + brewingTime + " seconds"), 0, 15, 0, false);
-		widgetHolder.addText(Text.of("Aging Time: " + agingDays + " days"), 0, 20, 0, false);
-		widgetHolder.addText(Text.of("Distillation: " + (distillation == 0 ? "None" : distillation + " runs at " + distillationTime + " seconds per run")), 0, 25, 0, false);
-		widgetHolder.addFillingArrow(30, 30, brewingTime * 1000);
-		
-		if(getInputs().size() > 1) {
-			int y = 30 - (getInputs().size() * 10);
-			for(int i = 0; i < getInputs().size(); i ++) widgetHolder.addSlot(getInputs().get(i), 0, y + (i * 20));
-		} else widgetHolder.addSlot(getInputs().getFirst(), 0, 30);
-		
-		if(getOutputs().size() > 1) {
-			int y = 30 - (getOutputs().size() * 10);
-			for(int i = 0; i < getOutputs().size(); i ++) widgetHolder.addSlot(getOutputs().get(i), 60, y + (i * 20)).recipeContext(this);
-		} else widgetHolder.addSlot(getOutputs().getFirst(), 60, 30).recipeContext(this);
+		widgetHolder.addText(Text.of("Difficulty: " + difficulty), 0, 10, 0, false);
+		widgetHolder.addText(Text.of("Produced In: " + barrelType.getName()), 0, 20, 0, false);
+		widgetHolder.addText(Text.of("Brewing Time: " + brewingTime + " s"), 0, 30, 0, false);
+		widgetHolder.addText(Text.of("Aging Time: " + agingDays + " days"), 0, 40, 0, false);
+		widgetHolder.addText(Text.of("Distillation: " + (distillation == 0 ? "None" : distillation + " times, " + distillationTime + "s each")), 0, 50, 0, false);
+		//Align them horizontally, with the arrow in the middle
+		for(int i = 0; i < getInputs().size(); i++) widgetHolder.addSlot(getInputs().get(i), 20 + (i * 20), 80);
+		widgetHolder.addFillingArrow(27 + (getInputs().size() * 20), 80, brewingTime * 1000);
+		for(int i = 0; i < getOutputs().size(); i++) widgetHolder.addSlot(getOutputs().get(i), 60 + (getInputs().size() * 20) + (i * 20), 80).recipeContext(this);
 	}
 }
